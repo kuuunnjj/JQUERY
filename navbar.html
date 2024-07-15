@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css" integrity="sha512-OQDNdI5rpnZ0BRhhJc+btbbtnxaj+LdQFeh0V9/igiEPDiWE2fG+ZsXl0JEH+bjXKPJ3zcXqNyP4/F/NegVdZg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<style>
+    *{
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+    }
+    body{
+        background-color: black;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    .navbar{
+        width: 100%;
+        height: 80px;
+        background-color: red;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-inline: 4vw;
+    }
+    .navbar .navleft{
+        width: 20%;
+        height: inherit;
+        display: flex;
+        align-items: center;
+    }
+    .navbar .navright{
+        width: 60%;
+        height: inherit;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+    }
+    .navbar .navright a{
+        text-decoration: none;
+        color: white;
+    }
+
+    .navbar .menuatmobile{
+        display: none;
+        justify-content: center;
+        align-items: center;
+    }
+    .navbar .menuatmobile i{
+        font-size: 40px;
+    }
+
+    .dropdownmenu{
+        width: 100%;
+        height: 40vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        background-color: red;
+        padding-block: 20px;
+        border-top: 1px solid black;
+    }
+    
+    .dropdownmenu a{
+        font-size: 20px;
+        text-decoration: none;
+        color: white;
+    }
+
+    @media (max-width:600px){
+        .navbar .navright{
+            display: none;
+        }
+        .navbar .menuatmobile{
+            display: flex;
+        }
+        .navbar .dropdownmenu{
+            display: none;
+        }
+    }
+    
+</style>
+<body>
+    <div class="navbar">
+        <div class="navleft">
+            <h1>LOGO.</h1>
+        </div>
+        <div class="navright">
+            <a href="#">Home</a>
+            <a href="#">Blog</a>
+            <a href="#">Services</a>
+            <a href="#">Menu</a>
+            <a href="#">Contact Us</a>
+        </div>
+        <div class="menuatmobile">
+            <i class="ri-menu-line" id="menuBtn"></i>
+        </div>
+    </div>
+
+    <div class="dropdownmenu">
+        <a href="#">Home</a>
+        <a href="#">Blog</a>
+        <a href="#">Services</a>
+        <a href="#">Menu</a>
+        <a href="#">Contact Us</a>
+    </div>
+</body>
+<script src="jquery.js"></script>
+<script>
+    $(document).ready(function(){
+        $(".dropdownmenu").hide()
+        $("#menuBtn").click(function(){
+            $(".dropdownmenu").slideToggle()
+        })
+    })
+</script>
+</html>

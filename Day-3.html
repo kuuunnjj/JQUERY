@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bulb-ON-OFF</title>
+</head>
+<style>
+    img{
+        width: 300px;
+        height: 300px;
+        object-fit: cover;
+    }
+    button{
+        display: block;
+        width: 200px;
+        height: 45px;
+        border: none;
+    }
+</style>
+<body>
+    <img src="off.webp" id="bulb_Off">
+    <button id="btn_Tgl">SWITCH ON</button>
+</body>
+<script src="jquery.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#btn_Tgl").click(function () {
+            let bulb = $("#bulb_Off")
+            let imgsrc = bulb.attr("src")
+
+            if (imgsrc.includes("off")) {
+                bulb.attr("src", "on.jpg")
+                $("#btn_Tgl").text("SWITCH OFF")
+            }
+            else {
+                bulb.attr("src", "off.webp")
+                $("#btn_Tgl").text("SWITCH ON")
+            } 
+        })
+    })
+</script>
+
+</html>
